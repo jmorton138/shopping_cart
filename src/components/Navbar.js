@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Cart from "./Cart";
@@ -9,13 +9,13 @@ const StyledLink = styled(Link)`
   color: white;
   font-size: 25px;
 `;
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="nav-container">
       <nav>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/shop">Shop</StyledLink>
-        <Cart />
+        <Cart cart={props.cart} />
       </nav>
     </div>
   );

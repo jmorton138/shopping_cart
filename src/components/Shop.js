@@ -1,10 +1,10 @@
 import React from "react";
 import Items from "./Items";
 
-export const Shop = () => {
+export const Shop = (props) => {
   return (
     <div>
-      <Items />
+      <Items addToCart={props.addToCart} />
     </div>
   );
 };

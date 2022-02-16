@@ -5,9 +5,16 @@ import { RouteSwitch } from "./RouteSwitch";
 import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (e, item) => {
+    e.preventDefault();
+    setCart([...cart, item]);
+    console.log(cart);
+  };
   return (
     <div>
-      <RouteSwitch />
+      <RouteSwitch addToCart={addToCart} cart={cart} />
     </div>
   );
 }

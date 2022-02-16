@@ -4,13 +4,13 @@ import App from "./App";
 import Shop from "./components/Shop";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-export const RouteSwitch = () => {
+export const RouteSwitch = (props) => {
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar cart={props.cart} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop" element={<Shop addToCart={props.addToCart} />} />
       </Routes>
     </BrowserRouter>
   );

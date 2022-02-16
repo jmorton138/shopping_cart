@@ -41,6 +41,8 @@
   padding: 20px;
   margin: 0;
   background-color: darkmagenta;
+  color: white;
+  font-size: 25px;
 }
 
 .item-container {
@@ -48,4 +50,8 @@
   width: 200px;
   height: 100px;
   padding: 20px;
+}
+
+.cart-container {
+  float: right;
 }

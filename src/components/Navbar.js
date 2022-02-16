@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Cart from "./Cart";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -14,6 +15,7 @@ const Navbar = () => {
       <nav>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/shop">Shop</StyledLink>
+        <Cart />
       </nav>
     </div>
   );

@@ -37,6 +37,12 @@
   }
 }
 
+.nav-container {
+  padding: 20px;
+  margin: 0;
+  background-color: darkmagenta;
+}
+
 .item-container {
   border: 1px solid darkolivegreen;
   width: 200px;

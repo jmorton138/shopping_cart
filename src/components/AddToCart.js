@@ -4,7 +4,7 @@ export const AddToCart = () => {
   return (
     <div className="add-to-cart-container">
       <input type="num"></input>
-      <button className="add-to-cart-btn"></button>
+      <button className="add-to-cart-btn">Add to Cart</button>
     </div>
   );
 };

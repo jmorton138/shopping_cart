@@ -5,13 +5,28 @@ export const Item = (props) => {
   const [item, setItem] = useState(0);
 
   useEffect(() => {
-    setItem({ name: "item1", price: "2" });
+    setItem(props.info);
   }, []);
+
+  const addQuantityToItem = (e) => {
+    setItem({ ...item, quantity: e.target.value });
+    console.log(item);
+  };
 
   return (
     <div className="item-container">
       <img className="item-img" alt="img" />
-      <p className="item-desc">Item description</p>
+      <h2>{item.name}</h2>
+      <p className="item-desc">{item.description}</p>
+      <input
+        onChange={(e) => {
+          addQuantityToItem(e);
+        }}
+        type="number"
+        min="1"
+        step="1"
+        defaultValue="1"
+      ></input>
       <AddToCart item={item} addToCart={props.addToCart} />
     </div>
   );

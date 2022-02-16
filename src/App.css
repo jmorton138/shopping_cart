@@ -55,3 +55,7 @@
 .cart-container {
   float: right;
 }
+
+.cart-display {
+  color: black;
+}

@@ -3,12 +3,32 @@ import { useState } from "react";
 
 const Cart = (props) => {
   const [cart, setCart] = useState([]);
-  console.log(props);
+  const [displayCart, setDisplayCart] = useState(false);
+  let cartRender;
+
   useEffect(() => {
     setCart(props.cart);
   }, []);
 
-  return <div className="cart-container">Cart({props.cart.length})</div>;
+  const showCartToggle = (e) => {
+    e.preventDefault();
+    setDisplayCart(!displayCart);
+  };
+
+  if (displayCart === true) {
+    cartRender = props.cart.map((item) => {
+      return <div>{item.name}</div>;
+    });
+  } else {
+    cartRender = null;
+  }
+
+  return (
+    <div className="cart-container" onClick={(e) => showCartToggle(e)}>
+      <div>Cart({props.cart.length})</div>
+      <div className="cart-display">{cartRender}</div>
+    </div>
+  );
 };
 
 export default Cart;

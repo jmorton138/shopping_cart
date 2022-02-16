@@ -10,7 +10,6 @@ export const Item = (props) => {
 
   const addQuantityToItem = (e) => {
     setItem({ ...item, quantity: e.target.value });
-    console.log(item);
   };
 
   return (

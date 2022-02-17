@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import CartSidebar from "./CartSidebar";
 
 const Cart = (props) => {
   const [cart, setCart] = useState([]);
@@ -16,9 +17,9 @@ const Cart = (props) => {
   };
 
   if (displayCart === true) {
-    cartRender = props.cart.map((item) => {
-      return <div>{item.name}</div>;
-    });
+    return (cartRender = (
+      <CartSidebar cart={props.cart} showCartToggle={showCartToggle} />
+    ));
   } else {
     cartRender = null;
   }
@@ -26,7 +27,7 @@ const Cart = (props) => {
   return (
     <div className="cart-container" onClick={(e) => showCartToggle(e)}>
       <div>Cart({props.cart.length})</div>
-      <div className="cart-display">{cartRender}</div>
+      <div>{cartRender}</div>
     </div>
   );
 };

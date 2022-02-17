@@ -9,7 +9,7 @@ function App() {
 
   const addToCart = (e, item) => {
     e.preventDefault();
-    //check if tem exists if so update quantity
+    //check if item exists if so update quantity
     if (cart.find((obj) => obj.id === item.id)) {
       const index = cart.findIndex((obj) => obj.id === item.id);
       const obj = cart[index];
@@ -20,8 +20,10 @@ function App() {
     } else {
       setCart([...cart, item]);
     }
-    console.log(cart);
   };
+
+  const deleteFromCart = (e, id) => {};
+  const reduceQuantityFromCart = (e, id) => {};
   return (
     <div>
       <RouteSwitch addToCart={addToCart} cart={cart} />

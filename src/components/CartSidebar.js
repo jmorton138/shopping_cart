@@ -6,7 +6,12 @@ const CartSidebar = (props) => {
     cartRender = <div>No items in Cart</div>;
   } else {
     cartRender = props.cart.map((item) => {
-      return <div>{item.name}</div>;
+      return (
+        <div>
+          <div>{item.name}</div>
+          <div>{item.quantity}</div>
+        </div>
+      );
     });
   }
 

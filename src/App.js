@@ -9,7 +9,17 @@ function App() {
 
   const addToCart = (e, item) => {
     e.preventDefault();
-    setCart([...cart, item]);
+    //check if tem exists if so update quantity
+    if (cart.find((obj) => obj.id === item.id)) {
+      const index = cart.findIndex((obj) => obj.id === item.id);
+      const obj = cart[index];
+      let amount = obj.quantity + item.quantity;
+      let tempArray = cart.slice();
+      tempArray[index].quantity = amount;
+      setCart(tempArray);
+    } else {
+      setCart([...cart, item]);
+    }
     console.log(cart);
   };
   return (

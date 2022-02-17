@@ -9,7 +9,8 @@ export const Item = (props) => {
   }, []);
 
   const addQuantityToItem = (e) => {
-    setItem({ ...item, quantity: e.target.value });
+    const value = parseInt(e.target.value);
+    setItem({ ...item, quantity: value });
   };
 
   return (

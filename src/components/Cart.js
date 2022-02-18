@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import CartSidebar from "./CartSidebar";
+import ReactCSSTransitionGroup from "react-transition-group"; // ES6
 
 const Cart = (props) => {
   const [displayCart, setDisplayCart] = useState(false);

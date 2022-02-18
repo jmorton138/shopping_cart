@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AddToCart } from "./AddToCart";
 
 export const Item = (props) => {
-  const [item, setItem] = useState("");
+  const [item, setItem] = useState({});
 
   useEffect(() => {
     setItem(props.info);
@@ -30,8 +30,7 @@ export const Item = (props) => {
         type="number"
         min="1"
         step="1"
-        defaultValue="1"
-        value={item.quantity}
+        value={item.quantity ? item.quantity : 1}
       ></input>
       <div
         onClick={(e) => {

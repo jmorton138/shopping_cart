@@ -61,9 +61,17 @@ const Items = (props) => {
     },
   ];
 
-  return items.map((item) => {
-    return <Item addToCart={props.addToCart} info={item} />;
-  });
+  // return items.map((item) => {
+  //   return <Item addToCart={props.addToCart} info={item} />;
+  // });
+
+  return (
+    <div className="items">
+      {items.map((item) => {
+        return <Item addToCart={props.addToCart} info={item} />;
+      })}
+    </div>
+  );
 };
 
 export default Items;

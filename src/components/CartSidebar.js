@@ -7,15 +7,20 @@ const CartSidebar = (props) => {
   } else {
     cartRender = props.cart.map((item) => {
       return (
-        <div>
-          <div>Item: {item.name}</div>
-          <div>Quantity: {item.quantity}</div>
+        <div className="checkout-item">
+          <div className="checkout-item-image"></div>
+          <div className="checkout-item-num">x{item.quantity}</div>
+
+          <div className="checkout-item-name">{item.name}</div>
+          <div className="checkout-item-price">${item.price}</div>
+
           <button
+            className="checkout-delete"
             onClick={(e) => {
               props.deleteFromCart(e, item.id);
             }}
           >
-            Remove Item
+            bin
           </button>
         </div>
       );
@@ -24,7 +29,13 @@ const CartSidebar = (props) => {
 
   return (
     <div>
-      <button onClick={(e) => props.hideCartToggle(e)}>X</button>
+      <button
+        className="close-sidebar-btn"
+        onClick={(e) => props.hideCartToggle(e)}
+      >
+        X
+      </button>
+
       {cartRender}
       <button>Checkout</button>
     </div>

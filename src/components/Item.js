@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AddToCart } from "./AddToCart";
 
 export const Item = (props) => {
-  const [item, setItem] = useState(0);
+  const [item, setItem] = useState("");
 
   useEffect(() => {
     setItem(props.info);
@@ -11,6 +11,11 @@ export const Item = (props) => {
   const addQuantityToItem = (e) => {
     const value = parseInt(e.target.value);
     setItem({ ...item, quantity: value });
+    console.log(item);
+  };
+
+  const handleAdd = (e) => {
+    setItem({ ...item, quantity: 1 });
   };
 
   return (
@@ -26,8 +31,15 @@ export const Item = (props) => {
         min="1"
         step="1"
         defaultValue="1"
+        value={item.quantity}
       ></input>
-      <AddToCart item={item} addToCart={props.addToCart} />
+      <div
+        onClick={(e) => {
+          handleAdd(e);
+        }}
+      >
+        <AddToCart item={item} addToCart={props.addToCart} />
+      </div>
     </div>
   );
 };

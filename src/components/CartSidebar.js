@@ -3,7 +3,7 @@ import React from "react";
 const CartSidebar = (props) => {
   let cartRender;
   if (props.cart.length === 0) {
-    cartRender = <div>No items in Cart</div>;
+    cartRender = <div className="no-items">No items in Cart</div>;
   } else {
     cartRender = props.cart.map((item) => {
       return (

@@ -36,7 +36,8 @@
   display: grid;
 }
 .item-img {
-  height: 100px;
+  width: 200px;
+  overflow: hidden;
 }
 
 .item-num-input {
@@ -60,6 +61,7 @@
   right: 0;
   top: 0;
   bottom: 0;
+  height: 100%;
   background-color: antiquewhite;
   color: black;
 }
@@ -86,4 +88,8 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   grid-gap: 30px;
+}
+
+.no-items {
+  margin: 20px 0;
 }

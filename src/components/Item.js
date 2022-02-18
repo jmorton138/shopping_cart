@@ -20,7 +20,7 @@ export const Item = (props) => {
 
   return (
     <div className="item-container">
-      <img className="item-img " alt="img" />
+      <img className="item-img " alt="img" src={item.imgUrl} />
       <div className="item-info">
         <h2 className="item-attr item-name">{item.name}</h2>
         <p className="item-desc item-attr">{item.description}</p>

@@ -7,7 +7,7 @@ import Home from "./components/Home";
 export const RouteSwitch = (props) => {
   return (
     <BrowserRouter>
-      <Navbar cart={props.cart} />
+      <Navbar cart={props.cart} deleteFromCart={props.deleteFromCart} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop addToCart={props.addToCart} />} />

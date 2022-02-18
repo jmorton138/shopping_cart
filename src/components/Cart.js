@@ -3,22 +3,38 @@ import { useState } from "react";
 import CartSidebar from "./CartSidebar";
 
 const Cart = (props) => {
-  const [cart, setCart] = useState([]);
   const [displayCart, setDisplayCart] = useState(false);
   let cartRender;
 
-  useEffect(() => {
-    setCart(props.cart);
-  }, []);
-
   const showCartToggle = (e) => {
     e.preventDefault();
-    setDisplayCart(!displayCart);
+    setDisplayCart(true);
+  };
+
+  const hideCartToggle = (e) => {
+    e.preventDefault();
+    setDisplayCart(false);
+  };
+
+  const itemQuantityReducer = () => {
+    const array = props.cart.map((item) => {
+      return item.quantity;
+    });
+    const initialValue = 0;
+    const sum = array.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      initialValue
+    );
+    return sum;
   };
 
   if (displayCart === true) {
     return (cartRender = (
-      <CartSidebar cart={props.cart} showCartToggle={showCartToggle} />
+      <CartSidebar
+        cart={props.cart}
+        hideCartToggle={hideCartToggle}
+        deleteFromCart={props.deleteFromCart}
+      />
     ));
   } else {
     cartRender = null;
@@ -26,7 +42,7 @@ const Cart = (props) => {
 
   return (
     <div className="cart-container" onClick={(e) => showCartToggle(e)}>
-      <div>Cart({props.cart.length})</div>
+      <div>Cart({itemQuantityReducer()})</div>
       <div>{cartRender}</div>
     </div>
   );

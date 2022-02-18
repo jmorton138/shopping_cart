@@ -15,7 +15,7 @@ const Navbar = (props) => {
       <nav>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/shop">Shop</StyledLink>
-        <Cart cart={props.cart} />
+        <Cart cart={props.cart} deleteFromCart={props.deleteFromCart} />
       </nav>
     </div>
   );

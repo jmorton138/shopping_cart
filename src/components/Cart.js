@@ -6,15 +6,16 @@ import ReactCSSTransitionGroup from "react-transition-group"; // ES6
 const Cart = (props) => {
   const [displayCart, setDisplayCart] = useState(false);
   let cartRender;
+  let visibility;
 
   const showCartToggle = (e) => {
     e.preventDefault();
-    setDisplayCart(true);
+    setDisplayCart(!displayCart);
   };
 
   const hideCartToggle = (e) => {
     e.preventDefault();
-    setDisplayCart(false);
+    setDisplayCart(!displayCart);
   };
 
   const itemQuantityReducer = () => {
@@ -30,21 +31,21 @@ const Cart = (props) => {
   };
 
   if (displayCart === true) {
-    return (cartRender = (
-      <CartSidebar
-        cart={props.cart}
-        hideCartToggle={hideCartToggle}
-        deleteFromCart={props.deleteFromCart}
-      />
-    ));
+    visibility = "show";
   } else {
-    cartRender = null;
+    visibility = "hide";
   }
 
   return (
     <div className="cart-container" onClick={(e) => showCartToggle(e)}>
       <div>Cart({itemQuantityReducer()})</div>
-      <div>{cartRender}</div>
+      <div id="cart-display" className={visibility}>
+        <CartSidebar
+          cart={props.cart}
+          hideCartToggle={hideCartToggle}
+          deleteFromCart={props.deleteFromCart}
+        />
+      </div>
     </div>
   );
 };

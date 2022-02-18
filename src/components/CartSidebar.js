@@ -23,7 +23,7 @@ const CartSidebar = (props) => {
   }
 
   return (
-    <div className="cart-display">
+    <div>
       <button onClick={(e) => props.hideCartToggle(e)}>X</button>
       {cartRender}
       <button>Checkout</button>

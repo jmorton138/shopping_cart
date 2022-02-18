@@ -60,30 +60,20 @@
   float: right;
 }
 
-.cart-display {
+#cart-display {
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
-  /* width: 30%; */
   background-color: antiquewhite;
   color: black;
 }
 
-/* .sidebar-enter {
-  width: 0;
-}
-
-.sidebar-enter.sidebar-enter-active {
+#cart-display.show {
   width: 30%;
-  transition: width 500ms ease-in;
+  transition: width 0.2s;
 }
-
-.sidebar-exit {
-  opacity: 1;
-}
-
-.sidebar-exit.sidebar-exit-active {
+#cart-display.hide {
   width: 0;
-  transition: width 300ms ease-in;
-} */
+  transition: width 0.2s;
+}

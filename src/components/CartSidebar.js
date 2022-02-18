@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const CartSidebar = (props) => {
   let cartRender;
@@ -8,7 +10,7 @@ const CartSidebar = (props) => {
     cartRender = props.cart.map((item) => {
       return (
         <div className="checkout-item">
-          <div className="checkout-item-image"></div>
+          <img className="checkout-item-image" src={item.imgUrl}></img>
           <div className="checkout-item-num">x{item.quantity}</div>
 
           <div className="checkout-item-name">{item.name}</div>
@@ -20,7 +22,7 @@ const CartSidebar = (props) => {
               props.deleteFromCart(e, item.id);
             }}
           >
-            bin
+            <FontAwesomeIcon icon={faTrashCan} />
           </button>
         </div>
       );

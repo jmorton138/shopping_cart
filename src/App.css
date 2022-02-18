@@ -77,13 +77,15 @@
 }
 
 .checkout-item {
-  font-size: 15px;
+  font-size: 20px;
   display: grid;
   grid-template-columns: 2fr 1fr 3fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
 }
 
 .items {
-  margin: 50px;
+  margin: 150px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -92,4 +94,8 @@
 
 .no-items {
   margin: 20px 0;
+}
+
+.checkout-item-image {
+  width: 110px;
 }

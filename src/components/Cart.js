@@ -37,8 +37,10 @@ const Cart = (props) => {
   }
 
   return (
-    <div className="cart-container" onClick={(e) => showCartToggle(e)}>
-      <div>Cart({itemQuantityReducer()})</div>
+    <div className="cart-container">
+      <div onClick={(e) => showCartToggle(e)}>
+        Cart({itemQuantityReducer()})
+      </div>
       <div id="cart-display" className={visibility}>
         <CartSidebar
           cart={props.cart}

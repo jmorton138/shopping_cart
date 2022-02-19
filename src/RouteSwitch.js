@@ -9,8 +9,11 @@ export const RouteSwitch = (props) => {
     <BrowserRouter>
       <Navbar cart={props.cart} deleteFromCart={props.deleteFromCart} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop addToCart={props.addToCart} />} />
+        <Route path="/shopping_cart" element={<Home />} />
+        <Route
+          path="/shopping_cart/shop"
+          element={<Shop addToCart={props.addToCart} />}
+        />
       </Routes>
     </BrowserRouter>
   );

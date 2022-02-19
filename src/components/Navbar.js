@@ -13,8 +13,8 @@ const Navbar = (props) => {
   return (
     <div className="nav-container">
       <nav>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/shop">Shop</StyledLink>
+        <StyledLink to="/shopping_cart">Home</StyledLink>
+        <StyledLink to="/shopping_cart/shop">Shop</StyledLink>
         <Cart cart={props.cart} deleteFromCart={props.deleteFromCart} />
       </nav>
     </div>
